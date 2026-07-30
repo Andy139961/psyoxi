@@ -1,0 +1,6 @@
+run = "node server.js"
+modules = ["nodejs-22"]
+hidden = [".config", "package-lock.json"]
+
+[nix]
+channel = "stable-24_05"
