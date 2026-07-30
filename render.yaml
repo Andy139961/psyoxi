@@ -1,0 +1,14 @@
+# Render 部署配置（免费 Web 服务，支持 WebSocket）
+# 用法：把本目录推到 GitHub → Render 新建 Blueprint → 选这个文件即可一键部署
+services:
+  - type: web
+    name: psyoxi
+    runtime: node
+    plan: free
+    region: oregon          # 可改成 singapore 等离你更近的区域
+    buildCommand: "true"    # 项目零依赖，无需安装
+    startCommand: "node server.js"
+    healthCheckPath: "/"
+    envVars:
+      - key: NODE_ENV
+        value: production
